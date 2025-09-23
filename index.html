@@ -7,6 +7,64 @@
 	<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-	
+	<main>
+		<h1>Box Address Calculator</h1>
+		<form id="box-address-calculator-form">
+			<div class="input-container">
+				<label for="parameter-presets">Preset</label>
+				<select id="parameter-presets">
+					<option value="RS-J">Japanese Ruby and Sapphire</option>
+					<option value="RS-EFIDS">International Ruby and Sapphire</option>
+					<option value="FRLG">Japanese FireRed and LeafGreen</option>
+					<option value="FRLG-EFIDS">International FireRed and LeafGreen</option>
+					<option value="EM-EFIDS">Japanese Emerald</option>
+					<option value="EM-EFIDS">International Emerald</option>
+					<option value="">-</option>
+				</select>
+				<label for="base-address">
+					<code>gPokemonStorage</code> base address
+				</label>
+				<input id="base-address" type="text" value="" />
+				<label for="base-address-shift-start"
+				><code>gPokemonStorage</code> offset start</label>
+				<input id="base-address-shift-start"
+					type="number"
+					step="4"
+					min="0"
+					max="124"
+				/>
+				<label for="base-address-shift-end"
+				><code>gPokemonStorage</code> offset end</label>
+				<input
+					id="base-address-shift-end"
+					type="number"
+					step="4"
+					min="0"
+					max="124"
+				/>
+				<label for="box-number">Box</label>
+				<input
+					id="box-number"
+					type="number"
+					min="1"
+					max="14"
+					value="1"
+				/>
+				<label for="box-slot">Slot</label>
+				<input
+					id="box-slot"
+					type="number"
+					min="1"
+					max="30"
+					value="1"
+				/>
+				<label for="slot-offset">Offset</label>
+				<input id="slot-offset" type="text" value="0" />
+				<label for="box-address">Box Address</label>
+				<output id="box-address"></output>
+			</div>
+			<button id="calculate-button" type="submit">Calculate</button>
+		</form>
+	</main>
 </body>
 </html>
