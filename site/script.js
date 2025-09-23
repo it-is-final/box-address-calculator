@@ -9,6 +9,9 @@ const baseAddressOffsetStartInput =
 	boxAddressCalculatorForm.elements.namedItem("base-address-shift-start");
 const baseAddressOffsetEndInput =
 	boxAddressCalculatorForm.elements.namedItem("base-address-shift-end");
+const resultAddressOutput = boxAddressCalculatorForm
+				.elements
+				.namedItem("box-address");
 const GAME_PRESETS = {
 	"RS-J": {  // Japanese Ruby and Sapphire
 		"base-address": 0x202fdbc,
@@ -79,10 +82,7 @@ function setParemetersFromPreset(gamePreset) {
 		baseAddressInput.removeAttribute("readonly");
 	else
 		baseAddressInput.setAttribute("readonly", "readonly");
-	boxAddressCalculatorForm
-		.elements
-		.namedItem("box-address")
-		.innerText = "";
+	resultAddressOutput.innerText = "";
 }
 
 function calculateBoxAddress(
@@ -139,10 +139,7 @@ function handleBoxAddressCalculatorFormSubmit(event) {
 	const resultOutput = result[0] === result[1]
 		? `${formatHexResultAddress(result[0])}`
 		: `${formatHexResultAddress(result[0])} to ${formatHexResultAddress(result[1])}`;
-	boxAddressCalculatorForm
-		.elements
-		.namedItem("box-address")
-		.innerText = resultOutput;
+	resultAddressOutput.innerText = resultOutput;
 }
 
 boxAddressCalculatorForm
