@@ -21,14 +21,15 @@ html {
 		sans-serif;
 }
 
-main {
+main, footer {
 	max-width: 35rem;
 	margin-inline: auto;
 }
 
-footer {
-	max-width: 35rem;
-	margin-inline: auto;
+@media (max-width: 37rem) {
+	main, footer {
+		margin-inline: 1rem;
+	}
 }
 
 .input-container {
@@ -41,4 +42,11 @@ footer {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 0.25em;
+}
+
+ @media (max-width: 34.25rem) {
+	.input-container {
+		display: flex;
+		flex-flow: column nowrap;
+	}
 }
