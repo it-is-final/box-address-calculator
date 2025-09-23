@@ -11,20 +11,20 @@
 		<h1>Box Address Calculator</h1>
 		<form id="box-address-calculator-form">
 			<div class="input-container">
-				<label for="parameter-presets">Preset</label>
+				<label for="parameter-presets">Game</label>
 				<select id="parameter-presets" name="preset">
 					<option value="RS-J">Japanese Ruby and Sapphire</option>
 					<option value="RS-EFIDS">International Ruby and Sapphire</option>
-					<option value="FRLG">Japanese FireRed and LeafGreen</option>
+					<option value="FRLG-J">Japanese FireRed and LeafGreen</option>
 					<option value="FRLG-EFIDS">International FireRed and LeafGreen</option>
-					<option value="EM-EFIDS">Japanese Emerald</option>
+					<option value="EM-J">Japanese Emerald</option>
 					<option value="EM-EFIDS">International Emerald</option>
-					<option value="">-</option>
+					<option value="CUSTOM">Custom</option>
 				</select>
 				<label for="base-address">
 					<code>gPokemonStorage</code> base address
 				</label>
-				<input id="base-address" name="base-address" type="text" value="" />
+				<input id="base-address" name="base-address" type="text" value="" readonly />
 				<label for="base-address-shift-start"
 				><code>gPokemonStorage</code> offset start</label>
 				<input id="base-address-shift-start"
