@@ -12,7 +12,7 @@
 		<form id="box-address-calculator-form">
 			<div class="input-container">
 				<label for="parameter-presets">Preset</label>
-				<select id="parameter-presets">
+				<select id="parameter-presets" name="preset">
 					<option value="RS-J">Japanese Ruby and Sapphire</option>
 					<option value="RS-EFIDS">International Ruby and Sapphire</option>
 					<option value="FRLG">Japanese FireRed and LeafGreen</option>
@@ -24,44 +24,58 @@
 				<label for="base-address">
 					<code>gPokemonStorage</code> base address
 				</label>
-				<input id="base-address" type="text" value="" />
+				<input id="base-address" name="base-address" type="text" value="" />
 				<label for="base-address-shift-start"
 				><code>gPokemonStorage</code> offset start</label>
 				<input id="base-address-shift-start"
+					name="base-address-shift-start"
 					type="number"
 					step="4"
 					min="0"
 					max="124"
+					required
 				/>
 				<label for="base-address-shift-end"
 				><code>gPokemonStorage</code> offset end</label>
 				<input
 					id="base-address-shift-end"
+					name="base-address-shift-end"
 					type="number"
 					step="4"
 					min="0"
 					max="124"
+					required
 				/>
 				<label for="box-number">Box</label>
 				<input
 					id="box-number"
+					name="box-number"
 					type="number"
 					min="1"
 					max="14"
 					value="1"
+					required
 				/>
 				<label for="box-slot">Slot</label>
 				<input
 					id="box-slot"
+					name="box-slot"
 					type="number"
 					min="1"
 					max="30"
 					value="1"
+					required
 				/>
 				<label for="slot-offset">Offset</label>
-				<input id="slot-offset" type="text" value="0" />
+				<input
+					id="slot-offset"
+					name="slot-offset"
+					type="text"
+					value="0"
+					required
+				/>
 				<label for="box-address">Box Address</label>
-				<output id="box-address"></output>
+				<output id="box-address" name="box-address"></output>
 			</div>
 			<button id="calculate-button" type="submit">Calculate</button>
 		</form>
