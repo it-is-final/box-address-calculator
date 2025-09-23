@@ -26,6 +26,11 @@ main {
 	margin-inline: auto;
 }
 
+footer {
+	max-width: 35rem;
+	margin-inline: auto;
+}
+
 .input-container {
 	display: grid;
 	grid-template-columns: max-content auto;
