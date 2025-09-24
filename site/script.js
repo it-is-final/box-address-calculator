@@ -162,19 +162,19 @@ boxAddressCalculatorForm
 			event.target.setCustomValidity("Invalid slot offset.");
 		else
 			event.target.setCustomValidity("")
-	})
+	});
 
 baseAddressOffsetStartInput.addEventListener("input", (event) => {
 	const offsetEnd = Number(baseAddressOffsetEndInput.value);
 	if (Number(event.target.value) > offsetEnd)
 		baseAddressOffsetEndInput.value = Number(event.target.value);
-})
+});
 
 baseAddressOffsetEndInput.addEventListener("input", (event) => {
 	const offsetStart = Number(baseAddressOffsetStartInput.value);
 	if (Number(event.target.value) < offsetStart)
 		baseAddressOffsetStartInput.value = Number(event.target.value);
-})
+});
 
 document.addEventListener("DOMContentLoaded", () => {
 	setParemetersFromPreset(gamePresetSelect.value);
