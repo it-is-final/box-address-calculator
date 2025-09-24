@@ -55,7 +55,7 @@ const BOX_POKEMON_SIZE = 80;
 function setParemetersFromPreset(gamePreset) {
 	const gamePresetValues = GAME_PRESETS[gamePreset];
 	console.log(gamePresetValues);
-	baseAddressInput.value = `0x${gamePresetValues["base-address"].toString(16)}`;
+	baseAddressInput.value = "0x" + gamePresetValues["base-address"].toString(16);
 	baseAddressOffsetStartInput.value =
 		gamePresetValues["base-address-shift-start"];
 	baseAddressOffsetEndInput.value =
@@ -97,12 +97,8 @@ function calculateBoxAddress(
 	const baseAddressEnd = baseAddress + 4 + baseAddressOffsetEnd;
 	const distance =
 		(TOTAL_BOX_SLOTS * (boxNumber - 1) + (boxSlot - 1))
-		* BOX_POKEMON_SIZE
-		+ slotOffset;
-	return [
-		baseAddressStart + distance,
-		baseAddressEnd + distance,
-	];
+		* BOX_POKEMON_SIZE + slotOffset;
+	return [baseAddressStart + distance, baseAddressEnd + distance];
 }
 
 function formatHexResultAddress(resultAddress) {
@@ -110,9 +106,7 @@ function formatHexResultAddress(resultAddress) {
 	// hexadecimal addresses, it is slightly easier to read if using a
 	// negative custom base address (use case might be for calculating
 	// SUB/SBC offset for box name codes).
-	return `\
-${(resultAddress < 0 && "−") || ""}0x${Math.abs(resultAddress).toString(16)}\
-`;
+	return (resultAddress < 0 ? "−" : "") + "0x" + Math.abs(resultAddress).toString(16);
 }
 
 function handleBoxAddressCalculatorFormSubmit(event) {
@@ -136,9 +130,10 @@ function handleBoxAddressCalculatorFormSubmit(event) {
 		boxSlot,
 		slotOffset,
 	);
-	const resultOutput = result[0] === result[1]
-		? `${formatHexResultAddress(result[0])}`
-		: `${formatHexResultAddress(result[0])} to ${formatHexResultAddress(result[1])}`;
+
+	let resultOutput = formatHexResultAddress(result[0]);
+	if (result[0] !== result[1])
+		resultOutput += " to " + formatHexResultAddress(result[1]);
 	resultAddressOutput.innerText = resultOutput;
 }
 
