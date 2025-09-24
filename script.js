@@ -1,17 +1,12 @@
 (() => {
-const boxAddressCalculatorForm =
-	document.forms.namedItem("box-address-calculator-form");
-const gamePresetSelect =
-	boxAddressCalculatorForm.elements.namedItem("preset");
-const baseAddressInput =
-	boxAddressCalculatorForm.elements.namedItem("base-address");
+const boxAddressCalculatorForm = document.forms.namedItem("box-address-calculator-form");
+const gamePresetSelect = boxAddressCalculatorForm.elements.namedItem("preset");
+const baseAddressInput = boxAddressCalculatorForm.elements.namedItem("base-address");
 const baseAddressOffsetStartInput =
 	boxAddressCalculatorForm.elements.namedItem("base-address-shift-start");
 const baseAddressOffsetEndInput =
 	boxAddressCalculatorForm.elements.namedItem("base-address-shift-end");
-const resultAddressOutput = boxAddressCalculatorForm
-				.elements
-				.namedItem("box-address");
+const resultAddressOutput = boxAddressCalculatorForm.elements.namedItem("box-address");
 const GAME_PRESETS = {
 	"RS-J": {  // Japanese Ruby and Sapphire
 		"base-address": 0x202fdbc,
@@ -47,7 +42,7 @@ const GAME_PRESETS = {
 		"base-address": 0,
 		"base-address-shift-start": 0,
 		"base-address-shift-end": 0,
-	}
+	},
 };
 const TOTAL_BOX_SLOTS = 30;
 const BOX_POKEMON_SIZE = 80;
